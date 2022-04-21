@@ -1,86 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Profile</title>
-</head>
-<body>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isErrorPage="true"%>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tag" %>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        </div>
-        </div>
-        
-
+<t:jsptag>
  
-
-<h2>
-		 <c:out value="${loggedInUser.name}"/>'s Profile
-		
-</h2>
- 
+	
 
 
 <div class="container">
   <div class="col1">
-  <!-- <div class="row row-cols-2"> -->
-    <h3>First Name: ${Item.User.name}</h3>
-    <h3>Last Name: ${Item.User.name} </h3>
-    <h3>City: ${Item.User.city} </h3>
-    <h3>State: ${Item.User.state}  </h3>
-    
+   <p></p>
+	<h3>First Name: ${item.user.firstName}</h3>
+	<p></p>
+    <!-- Force next columns to break to new line -->
+    <div class="w-100"></div>
+ 	<p></p>
+	<h3>Last Name: ${item.user.Lastname}</h3>
+	<p></p>
+	 <p></p>
+	<h3>City: ${item.user.city}</h3>
+	<p></p>
+	 <p></p>
+	<h3>State: ${item.user.state}</h3>
+	<p></p>
+	 <p></p>
   </div>
   
-   <div class="col2">
-  <!-- <div class="row row-cols-2"> -->
-    <h3>Username: ${Item.User.username}</h3>
-    <h3>Email: ${Item.User.username} </h3>
-    <h3>Password: ${Item.User.password} </h3>
-    <h3>Confirm Password: ${Item.User.confirmpassword}  </h3>
-    
-  </div>
+  <div class="col2">
+   <p></p>
+	<h3>Username: ${item.user.userName}</h3>
+	<p></p>
+    <!-- Force next columns to break to new line -->
+    <div class="w-100"></div>
+ 	<p></p>
+	<h3>Password: ${item.user.password}</h3>
+	<p></p>
+	 <p></p>
+	<h3>Confirm: ${item.user.confirmPassword}</h3>
+	<p></p>
+	</div>
+	  
   
-  <!--  <c:if test="${item.user.id==loggedInUser.id}">
-		<a class="btn btn-primary" href="/item/${item.id}/edit">Edit</a>
-	</c:if> -->  
-  
-  
-  <table class="table table-striped">
+</div>
+
+	<c:if test="${item.user.id==loggedInUser.id}">
+		<a class="btn btn-primary" href="/books/${item.id}/profile">Edit Profile</a>
+	</c:if>
+
+<h2>My Listed Items</h2>
+
+
+
+	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">Item for Sale</th>
+				<th scope="col">Item For Sale</th>
 				<th scope="col">Description</th>
-				<th scope="col">Action</th>
+				<th scope="col">Action </th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${items}" var="item">
 
 				<tr>
+					
 					<td>${item.item}</td>
-					<td>${item.description}</td>
-					<%-- 	<td class="linkcolor"> href="/item/${item.id}/edit">Edit</td> --%>
+					<td>${item.user.name}</td>
+					<td class="linkcolor"> <a href="items">Edit</a></td> <!-- need to add in the path to edit -->
+
+
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-  
-  
-</div>
 
-</body>
-</html>
+</t:jsptag>   
+
+
+
