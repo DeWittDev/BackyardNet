@@ -12,6 +12,7 @@ LSP4ETextOccurrenceIndicationColor=24,88,130
 LSP4EWriteOccurrenceIndicationColor=24,88,130
 PHPReadOccurrenceIndicationColor=61,61,4
 PHPWriteOccurrenceIndicationColor=61,61,4
+STS4BootMarkerIndicationColor=50,75,23
 TM4EMatchingPairColor=24,88,130
 TextOccurrenceIndicationColor=27, 98, 145
 asOccurencesIndicationColor=61,61,4
