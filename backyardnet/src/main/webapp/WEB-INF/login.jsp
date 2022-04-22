@@ -11,9 +11,9 @@
 			<h1>Login</h1>
 			<form:form action="/login" modelAttribute="newActiveUser">
 				<div class="form-group">
-					<form:label for="email" path="email">Username:</form:label>
-					<form:input type="text" class="form-control" path="email" />
-					<form:errors class="text-danger" path="email" />
+					<form:label for="email" path="userName">Username:</form:label>
+					<form:input type="text" class="form-control" path="userName" />
+					<form:errors class="text-danger" path="userName" />
 				</div>
 				<div class="form-group">
 					<form:label for="password" path="password">Password:</form:label>
