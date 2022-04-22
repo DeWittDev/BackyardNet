@@ -42,7 +42,7 @@ public class UserService {
 
     // Find User by id
     public User findById(Long id) {
-        return userRepo.findById(id).orElse(null);
+        return userRepo.findById(id);// wont let me put orElse(null)
     }
 
     // Authenticate User for Login
