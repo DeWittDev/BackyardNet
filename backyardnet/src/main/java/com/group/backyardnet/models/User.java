@@ -26,7 +26,23 @@ public class User {
 
     @NotEmpty(message = "This field cannot be left empty")
     @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters")
-    private String name;
+    private String firstName;
+
+    @NotEmpty(message = "This field cannot be left empty")
+    @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters")
+    private String lastName;
+
+    @NotEmpty(message = "This field cannot be left empty")
+    @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters")
+    private String city;
+
+    @NotEmpty(message = "This field cannot be left empty")
+    @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters")
+    private String state;
+
+    @NotEmpty(message = "This field cannot be left empty")
+    @Size(min = 3, max = 200, message = "Name must be between 3 and 200 characters")
+    private String userName;
 
     @NotEmpty(message = "This field cannot be left empty")
     @Email(message = "Please enter a valid email address!")
@@ -42,7 +58,10 @@ public class User {
     private String confirmPassword;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Item> item;
+    private List<Item> items;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Comment> comments;
 
     public Long getId() {
         return this.id;
@@ -52,12 +71,44 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public String getFirstName() {
+        return this.firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return this.city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return this.state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -83,4 +134,13 @@ public class User {
     public void setItem(List<Item> item) {
         this.item = item;
     }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }
