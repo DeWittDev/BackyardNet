@@ -58,10 +58,10 @@ public class User {
     private String confirmPassword;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Item> items;
+    private List<Item> item;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Comment> comments;
+    private List<Comment> comment;
 
     public Long getId() {
         return this.id;
