@@ -3,13 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
-</head>
-<body>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tag" %>
+
+<t:jsptag>
+
 <h1 class="headline">Welcome <c:out value="${loggedInUser.userName}"></c:out>!!!!</h1>
 <h3>Available items for sale:</h3>
 <div>
@@ -42,5 +39,4 @@
 </div>
 <a href="/additem/${loggedInUser}" target="_parent">Add an item</a>
 
-</body>
-</html>
+</t:jsptag>   
