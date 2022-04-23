@@ -3,15 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="/style.css">
-<title>New Item</title>
-</head>
-<body>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tag" %>
+
+<t:jsptag>
+
 <h1>Fill out the details below concerning your item: </h1>
 <form:form action="/item" method="post" modelAttribute="newItem">
 	<p>
@@ -42,9 +37,9 @@
         <form:errors path="zipcode"/>     
         <form:textarea path="zipcode"/>
     </p>
-    <form:input type="hidden" value="${loggedInUser.id}" path="user"/>
+    <form:input type="hidden" value="${currentUser.id}" path="user"/>
     
 	<button class="btn btn-primary">List Item</button>
 </form:form>
-</body>
-</html>
+
+</t:jsptag>   
