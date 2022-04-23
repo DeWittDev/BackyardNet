@@ -21,7 +21,7 @@
 					<form:errors class="text-danger" path="password" />
 				</div>
 				
-				<a  class="btn btn-danger" href="/registration">Seller Registration</a> 
+				<a  class="btn btn-danger" href="/registration">Create A Seller Registration</a> 
 				
 				
 				

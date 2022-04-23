@@ -47,7 +47,7 @@
 </div>
 
 	<c:if test="${item.user.id==loggedInUser.id}">
-		<a class="btn btn-primary" href="/books/${item.id}/profile">Edit Profile</a>
+		<a class="btn btn-primary" href="/items/${item.id}/profile">Edit Profile</a>
 	</c:if>
 
 <h2>My Listed Items</h2>
@@ -67,9 +67,9 @@
 
 				<tr>
 					
-					<td>${item.item}</td>
+					<td>${item.itemName}</td>
 					<td>${item.user.name}</td>
-					<td class="linkcolor"> <a href="items">Edit</a></td> <!-- need to add in the path to edit -->
+					<td class="linkcolor"> <a href="/items/${item.id }/edit">Edit</a></td> <!-- need to add in the path to edit -->
 
 
 				</tr>

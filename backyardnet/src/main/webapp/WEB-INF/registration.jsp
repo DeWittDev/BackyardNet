@@ -51,9 +51,9 @@
 				<form:password class="form-control" path="password" />
 			</div>
 			<div class="form-group">
-				<form:label path="confirm">Password Confirmation:</form:label>
-				<form:errors class="text-danger" path="confirm" />
-				<form:password class="form-control" path="confirm" />
+				<form:label path="confirmPassword">Password Confirmation:</form:label>
+				<form:errors class="text-danger" path="confirmPassword" />
+				<form:password class="form-control" path="confirmPassword" />
 			</div>
 			<p></p>
 			<button type="submit" class="btn btn-primary">Register</button>
