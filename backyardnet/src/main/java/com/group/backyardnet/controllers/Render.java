@@ -34,6 +34,9 @@ public class Render {
 	//------------------------------------- Login ------------------------------------------------
 	@GetMapping("/")
 	public String login(@ModelAttribute("newLogin") LoginUser newLogin, @ModelAttribute("newUser") User user) {
+		if(session.getAttribute("currentUser") != null) {
+    		return "redirect:/home";
+    	}
 		return "login.jsp";
 	}
 	
@@ -46,7 +49,7 @@ public class Render {
     	User currentUser = userService.findByUserName(newLogin.getUserName());
     	
     	session.setAttribute("currentUser", currentUser);
-    	return "redirect:/home";
+    	return "home.jsp";
     }
 	
 	@GetMapping("/logout")
@@ -61,7 +64,7 @@ public class Render {
     	if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
-    	return "index.jsp";
+    	return "registration.jsp";
     }
 	
 	@PostMapping("/register/new")
