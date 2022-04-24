@@ -57,7 +57,7 @@
 			</div>
 			<p></p>
 			<button type="submit" class="btn btn-primary">Register</button>
-
+created branch phong
 		</form:form>
 	</div>
 
