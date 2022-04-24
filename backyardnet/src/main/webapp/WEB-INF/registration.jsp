@@ -12,8 +12,8 @@
 
 
 		<h1>Seller Registration</h1>
-		<form:form method="POST" action="/registerUser"
-			modelAttribute="newlyCreatedUser">
+		<form:form method="POST" action="/register/new"
+			modelAttribute="newUser">
 
 			<div class="form-group">
 				<form:label path="firstName">First Name:</form:label>
@@ -57,7 +57,7 @@
 			</div>
 			<p></p>
 			<button type="submit" class="btn btn-primary">Register</button>
-created branch phong
+
 		</form:form>
 	</div>
 
