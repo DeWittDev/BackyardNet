@@ -36,7 +36,7 @@
   </div>
   </div>
   
-  <a class="btn btn-primary" href="/books/${book.id}/edit">Edit</a>
+  <a class="btn btn-primary" href="/seller/${user.id}/edit">Edit</a>
   
   <a class="btn btn-primary" href="Email Seller">Email Seller </a> <!--  figure out how to launch email client later -->
   
