@@ -34,7 +34,6 @@ public class Item {
     private String description;
     
   //ZipCode
-    @NotEmpty(message="Must include your Zip Code")
     private Integer zipCode;
     
   //Image of Item
