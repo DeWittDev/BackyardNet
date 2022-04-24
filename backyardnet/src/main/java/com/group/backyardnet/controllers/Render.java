@@ -17,6 +17,7 @@ import com.group.backyardnet.models.Item;
 import com.group.backyardnet.models.LoginUser;
 import com.group.backyardnet.models.User;
 import com.group.backyardnet.services.ItemService;
+import com.group.backyardnet.services.UserService;
 
 @Controller
 public class Render {
@@ -27,12 +28,12 @@ public class Render {
 	@Autowired
 	private ItemService itemService;
 	
-	//@Autowired
-	//private UserService userService;
+	@Autowired
+	private UserService userService;
 	
 	//------------------------------------- Login ------------------------------------------------
 	@GetMapping("/")
-	public String login() {
+	public String login(@ModelAttribute("newLogin") LoginUser newLogin, @ModelAttribute("newUser") User user) {
 		if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
@@ -40,15 +41,15 @@ public class Render {
 	}
 	
 	@PostMapping("/login")
-	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
-    	//userService.authenticate(newLogin, result);
+	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, @ModelAttribute("newUser") User user) {
+    	userService.authenticateUser(newLogin, result);
     	if(result.hasErrors()) {
     		return "redirect:/login";
     	}
-    	//User currentUser = userService.findByEmail(newLogin.getEmail());
+    	User currentUser = userService.findByUserName(newLogin.getUserName());
     	
-    	//session.setAttribute("currentUser", currentUser);
-    	return "redirect:/home";
+    	session.setAttribute("currentUser", currentUser);
+    	return "home.jsp";
     }
 	
 	@GetMapping("/logout")
@@ -63,17 +64,17 @@ public class Render {
     	if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
-    	return "index.jsp";
+    	return "registration.jsp";
     }
 	
 	@PostMapping("/register/new")
     public String registerSubmit(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser newLogin) {
-    	//userService.validation(user, result);
+		userService.validate(user, result);
     	if(result.hasErrors()) {
     		return "redirect:/";
     	}
-		//userService.register(user);
-		//session.setAttribute("currentUser", user);
+		userService.registerUser(user);
+		session.setAttribute("currentUser", user);
     	return "redirect:/home";
     }
 	
