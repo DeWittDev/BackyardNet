@@ -37,6 +37,6 @@
 			</tbody>
 	</table>
 </div>
-<a href="/additem/${currentUser}">Add an item</a>
+<a href="/item/new">Add an item</a>
 
 </t:jsptag>   
