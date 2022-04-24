@@ -60,7 +60,7 @@ public class User {
     @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
     private List<Item> item;
 
-    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Comment> comment;
 
     public Long getId() {
