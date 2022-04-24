@@ -20,14 +20,6 @@
         <form:textarea path="description"/>
     </p>
     <p>
-        <form:label path="condition">Condition</form:label>
-        <form:errors path="condition"/>     
-        <form:select path="condition">
-        <form:option value="new">New</form:option>
-        <form:option value="used">Used</form:option>
-        </form:select>
-    </p> 
-    <p>
         <form:label path="price">Price:</form:label>
         <form:errors path="price"/>     
         <form:textarea path="price"/>
