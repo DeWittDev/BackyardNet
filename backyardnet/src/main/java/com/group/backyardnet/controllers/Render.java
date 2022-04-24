@@ -90,7 +90,7 @@ public class Render {
 	
 	//------------------------------------- Add Item --------------------------------------------
 	@GetMapping("/item/new")
-	public String addItem(@ModelAttribute("item") Item item) {
+	public String addItem(@ModelAttribute("newItem") Item item) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
