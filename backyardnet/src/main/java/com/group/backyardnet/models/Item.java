@@ -49,14 +49,14 @@ public class Item {
     private String image;
     
   //DateTime
-  	@Column(updatable=false)
+	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private Date createdAt;
-  	
+
     @DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private Date updatedAt;	
-      
-  	@PrePersist
+    
+	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }
