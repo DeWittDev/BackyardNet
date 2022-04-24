@@ -13,7 +13,7 @@
 
 		<h1>Update Information <c:out value="${currentUser.userName}"></c:out></h1>
 		
-		<form:form method="post" action="/updateuser/${currentUser.id}"
+		<form:form method="post" action="/user/edit/${currentUser.id}"
 			modelAttribute="updateUser">
 			<form:input type="hidden" value="${currentUser.id}" path="id"/>
 

@@ -7,7 +7,7 @@
 
 <t:jsptag>
 
-<h1 class="headline">Welcome <c:out value="${loggedInUser.userName}"></c:out>!!!!</h1>
+<h1 class="headline">Welcome <c:out value="${currentUser.userName}"></c:out>!!!!</h1>
 <h3>Available items for sale:</h3>
 <div>
 <table class="table table-success table-striped">
@@ -29,7 +29,7 @@
 					<td>${items.description}</td>
 					<td>${items.condition} </td>
 					<td>${items.price}</td>
-					<td><a href="/user/${items.user.id}">${items.user.userName}</a></td>
+					<td><a href="/user/${items.users.id}">${items.users.userName}</a></td>
 					<td>${items.zipcode}</td>
 					<td>${items.image}</td>
 				</tr>
@@ -37,6 +37,6 @@
 			</tbody>
 	</table>
 </div>
-<a href="/additem/${loggedInUser}" target="_parent">Add an item</a>
+<a href="/additem/${currentUser}" target="_parent">Add an item</a>
 
 </t:jsptag>   
