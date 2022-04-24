@@ -38,7 +38,7 @@
   
   <a class="btn btn-primary" href="/user/edit/${currentUser.id}">Edit</a>
   
-  <a class="btn btn-primary" href="mailto:SellerName@aol.com">Email Seller </a> <!--  Phong to figure out how to launch email client repopulate with seller dummy email later -->
+  <a class="btn btn-primary" href="mailto:SellerName@aol.com" >Email Seller </a> <!--  Phong to figure out how to launch email client repopulate with seller dummy email later -->
   
    <!-- <a href="mailto:name@eyehunts.com">Send mail</a> -->
   
