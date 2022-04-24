@@ -5,11 +5,15 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
+import com.group.backyardnet.models.Item;
 import com.group.backyardnet.models.LoginUser;
 import com.group.backyardnet.models.User;
 import com.group.backyardnet.services.ItemService;
@@ -36,7 +40,7 @@ public class Render {
 	}
 	
 	@PostMapping("/login")
-	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
+	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
     	//userService.authenticate(newLogin, result);
     	if(result.hasErrors()) {
     		return "redirect:/login";
@@ -49,7 +53,7 @@ public class Render {
 	
 	//------------------------------------- Register ---------------------------------------------
 	@GetMapping("/register")
-	public String Register(@ModelAttribute("newUser") User newUser, @ModelAttribute("newLogin") LoginUser newLogin, HttpSession session) {
+	public String register(@ModelAttribute("newUser") User newUser, @ModelAttribute("newLogin") LoginUser newLogin, HttpSession session) {
     	if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
@@ -57,7 +61,7 @@ public class Render {
     }
 	
 	@PostMapping("/register/new")
-    public String register(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser newLogin) {
+    public String registerSubmit(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser newLogin) {
     	//userService.validation(user, result);
     	if(result.hasErrors()) {
     		return "redirect:/";
@@ -79,15 +83,50 @@ public class Render {
 	
 	//------------------------------------- Add Item --------------------------------------------
 	@GetMapping("/item/new")
-	public String addItem() {
+	public String addItem(@ModelAttribute("item") Item item) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
 		return "additem.jsp";
 	}
 	
-	//------------------------------------- Edit Item -------------------------------------------
+	@PostMapping("/item/add")
+	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result) {
+		if(result.hasErrors()) {
+    		return "index.jsp";
+    	}
+		itemService.addItem(item);
+		return "redirect:/home";
+	}
 	
+	//------------------------------------- View Item -------------------------------------------
+	@GetMapping("/item/{id}")
+	public String viewItem(@PathVariable("id") Long id, Model model) {
+		if(session.getAttribute("currentUser") == null) {
+    		return "redirect:/";
+    	}
+		model.addAttribute("item", itemService.findById(id));
+		return "showItem.jsp";
+	}
+	
+	//------------------------------------- Edit Item -------------------------------------------
+	@GetMapping("/item/edit/{id}")
+	public String edit(Model model, @PathVariable("id") Long id) {
+		if(session.getAttribute("currentUser") == null) {
+    		return "redirect:/";
+    	}
+		model.addAttribute("item", itemService.findById(id));
+		return "edititem.jsp";
+	}
+	
+	@PutMapping("/item/submit/{id}")
+	public String itemEdit(@Valid @ModelAttribute("edit") Item item, @PathVariable("id") Long id, BindingResult result) {
+		if(result.hasErrors()) {
+    		return "redirect:/";
+    	}
+		itemService.edit(item);
+		return "redirect:/home";
+	}
 	
 	//------------------------------------- Account Page ----------------------------------------
 	
