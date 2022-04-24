@@ -51,6 +51,12 @@ public class Render {
     	return "redirect:/home";
     }
 	
+	@GetMapping("/logout")
+    public String logOut() {
+    	session.invalidate();
+    	return "redirect:/";
+    }
+	
 	//------------------------------------- Register ---------------------------------------------
 	@GetMapping("/register")
 	public String register(@ModelAttribute("newUser") User newUser, @ModelAttribute("newLogin") LoginUser newLogin, HttpSession session) {
@@ -115,7 +121,7 @@ public class Render {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
-		model.addAttribute("item", itemService.findById(id));
+		model.addAttribute("item", itemService.findById(id)); 
 		return "edititem.jsp";
 	}
 	
