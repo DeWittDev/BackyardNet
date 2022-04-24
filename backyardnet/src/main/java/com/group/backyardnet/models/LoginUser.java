@@ -14,12 +14,12 @@ public class LoginUser {
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
     private String password;
 
-    public String getUsername() {
+    public String getUserName() {
         return this.userName;
     }
 
-    public void setUsername(String username) {
-        this.userName = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
