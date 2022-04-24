@@ -7,50 +7,50 @@
 
 <t:jsptag>
  
-	
+<h1>Profile</h1>	
 
 
 <div class="container">
   <div class="col1">
    <p></p>
-	<h3>First Name: ${item.users.firstName}</h3>
+	<h3>First Name: ${currentUser.firstName}</h3>
 	<p></p>
     <!-- Force next columns to break to new line -->
     <div class="w-100"></div>
  	<p></p>
-	<h3>Last Name: ${item.users.Lastname}</h3>
+	<h3>Last Name: ${currentUser.lastName}</h3>
 	<p></p>
 	 <p></p>
-	<h3>City: ${item.users.city}</h3>
+	<h3>City: ${currentUser.city}</h3>
 	<p></p>
 	 <p></p>
-	<h3>State: ${item.users.state}</h3>
+	<h3>State: ${currentUser.state}</h3>
 	<p></p>
 	 <p></p>
   </div>
   
   <div class="col2">
    <p></p>
-	<h3>Username: ${item.users.userName}</h3>
+	<h3>Username: ${currentUser.userName}</h3>
 	<p></p>
     <!-- Force next columns to break to new line -->
     <div class="w-100"></div>
  	<p></p>
-	<h3>Password: ${item.users.password}</h3>
+	<%-- <h3>Password: ${currentUser.password}</h3>
 	<p></p>
 	 <p></p>
-	<h3>Confirm: ${item.users.confirm}</h3>
+	<h3>Confirm: ${currentUser.confirm}</h3> --%>
 	<p></p>
 	</div>
 	  
   
 </div>
 
-	<c:if test="${item.users.id==currentUser.id}">
+	
 		<a class="btn btn-primary" href="/user/edit/${currentUser.id}">Edit Profile</a>
 		
 	
-	</c:if>
+	
 
 <h2>My Listed Items</h2>
 
@@ -72,7 +72,7 @@
 					<td>${item.item}</td>
 					<td>${item.user.name}</td>
 					<td class="linkcolor"> <a href="items">Edit</a></td> <!-- need to add in the path to edit -->
-remove meta file 
+
 				</tr>
 			</c:forEach>
 		</tbody>

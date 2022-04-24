@@ -28,6 +28,11 @@ public class Item {
     @NotEmpty(message="The item needs a price to be sold")
     private Integer price;
     
+  //Description
+    @NotEmpty(message="Need a description onf the item")
+    @Size(min=10, message="Description needs to include a little more than that")
+    private String description;
+    
   //ZipCode
     @NotEmpty(message="Must include your Zip Code")
     @Size(min=5, max=9, message="Include only the first five digits of your Zip Code")
@@ -37,7 +42,7 @@ public class Item {
     private String imgurl;
     
     
-  //User
+	//User
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User users;
@@ -88,5 +93,12 @@ public class Item {
 	}
 	public void setImgurl(String imgurl) {
 		this.imgurl = imgurl;
+	}
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
