@@ -18,7 +18,7 @@ public class UserService {
     public void validate(User newUser, Errors errors) {
         // EMAIL
         if (userRepo.findByEmail(newUser.getEmail()) != null) {
-            errors.rejectValue("email", "taken", "This email has already been taken. Please log in!");
+            errors.rejectValue("email", "taken", "invalid email");
         }
 
         // PASSWORD
@@ -36,19 +36,19 @@ public class UserService {
     }
 
     // Find User By Email
-    public User findByEmail(String email) {
-        return userRepo.findByEmail(email);
+    public User findByUserName(String userName) {
+        return userRepo.findByUserName(userName);
     }
 
     // Find User by id
     public User findById(Long id) {
-        return userRepo.findById(id);// wont let me put orElse(null)
+        return userRepo.findById(id);
     }
 
     // Authenticate User for Login
     public boolean authenticateUser(LoginUser newLogin, Errors errors) {
         // Find By Email
-        User user = userRepo.findByEmail(newLogin.getEmail());
+        User user = userRepo.findByUserName(newLogin.getUserName());
 
         // if User is NOT found by email return false
         if (user == null) {
