@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -25,8 +26,8 @@ public class Item {
     private String itemName;
     
   //Price
-    @NotEmpty(message="The item needs a price to be sold")
-    private Integer price;
+    @NotBlank(message="The item needs a price to be sold")
+    private Long price;
     
   //Description
     @NotEmpty(message="Need a description onf the item")
@@ -70,11 +71,13 @@ public class Item {
 		this.users = users;
 	}
 
-	public Integer getPrice() {
+	
+
+	public Long getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(Long price) {
 		this.price = price;
 	}
 
