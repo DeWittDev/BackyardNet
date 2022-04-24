@@ -33,7 +33,7 @@ public class Render {
 	
 	//------------------------------------- Login ------------------------------------------------
 	@GetMapping("/")
-	public String login() {
+	public String login(@ModelAttribute("newLogin") LoginUser newLogin, @ModelAttribute("newUser") User user) {
 		if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
@@ -41,7 +41,7 @@ public class Render {
 	}
 	
 	@PostMapping("/login")
-	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
+	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, @ModelAttribute("newUser") User user) {
     	userService.authenticateUser(newLogin, result);
     	if(result.hasErrors()) {
     		return "redirect:/login";
@@ -49,7 +49,7 @@ public class Render {
     	User currentUser = userService.findByUserName(newLogin.getUserName());
     	
     	session.setAttribute("currentUser", currentUser);
-    	return "redirect:/home";
+    	return "home.jsp";
     }
 	
 	@GetMapping("/logout")
@@ -64,7 +64,7 @@ public class Render {
     	if(session.getAttribute("currentUser") != null) {
     		return "redirect:/home";
     	}
-    	return "index.jsp";
+    	return "registration.jsp";
     }
 	
 	@PostMapping("/register/new")
