@@ -100,7 +100,7 @@ public class Render {
 	@PostMapping("/item/add")
 	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result) {
 		if(result.hasErrors()) {
-    		return "index.jsp";
+    		return "redirect:/item/new";
     	}
 		itemService.addItem(item);
 		return "redirect:/home";
