@@ -7,7 +7,7 @@
 
 <t:jsptag>
 
-<h1 class="headline">Welcome <c:out value="${currentUser.userName}"></c:out>!!!!</h1>
+<%-- <h1 class="headline">Welcome <c:out value="${currentUser.userName}"></c:out>!!!!</h1> --%>
 <h3>Available items for sale:</h3>
 <div>
 <table class="table table-success table-striped">
