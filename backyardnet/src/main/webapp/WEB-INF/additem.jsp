@@ -25,9 +25,14 @@
         <form:textarea path="price"/>
     </p>
     <p>
-        <form:label path="zipcode">Zipcode:</form:label>
-        <form:errors path="zipcode"/>     
-        <form:textarea path="zipcode"/>
+        <form:label path="zipCode">Zipcode:</form:label>
+        <form:errors path="ziCcode"/>     
+        <form:textarea path="zipCode"/>
+    </p>
+    <p>
+        <form:label path="imgurl">Image:</form:label>
+        <form:errors path="imgurl"/>     
+        <form:textarea path="imgurl"/>
     </p>
     <form:input type="hidden" value="${currentUser.id}" path="user"/>
     
