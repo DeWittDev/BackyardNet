@@ -120,11 +120,11 @@ public class User {
     }
 
     public String getConfirmPassword() {
-        return this.confirmPassword;
+        return this.confirm;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setConfirmPassword(String confirm) {
+        this.confirm = confirm;
     }
 
     public List<Item> getItem() {

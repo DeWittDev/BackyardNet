@@ -72,8 +72,7 @@
 					<td>${item.item}</td>
 					<td>${item.user.name}</td>
 					<td class="linkcolor"> <a href="items">Edit</a></td> <!-- need to add in the path to edit -->
-
-
+remove meta file 
 				</tr>
 			</c:forEach>
 		</tbody>
