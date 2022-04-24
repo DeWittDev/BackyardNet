@@ -33,12 +33,12 @@ public class Render {
 	
 	//------------------------------------- Login ------------------------------------------------
 	@GetMapping("/")
-	public String login() {
+	public String login(@ModelAttribute("newLogin") LoginUser newLogin, @ModelAttribute("newUser") User user) {
 		return "login.jsp";
 	}
 	
 	@PostMapping("/login")
-	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
+	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, @ModelAttribute("newUser") User user) {
     	userService.authenticateUser(newLogin, result);
     	if(result.hasErrors()) {
     		return "redirect:/login";
