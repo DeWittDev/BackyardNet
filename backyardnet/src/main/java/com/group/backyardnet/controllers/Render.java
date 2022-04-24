@@ -129,8 +129,17 @@ public class Render {
 	}
 	
 	//------------------------------------- Account Page ----------------------------------------
-	
+	@GetMapping("/user/{id}")
+	public String Account(@PathVariable("id") Long id) {
+		return "profile.jsp";
+	}
 	
 	//------------------------------------- Edit Account ----------------------------------------
-	
+	@GetMapping("/user/edit/{id}")
+	public String editUser(@Valid @PathVariable("id") Long id) {
+		if(session.getAttribute("currentUser") == null) {
+    		return "redirect:/";
+    	}
+		return "editprofile.jsp";
+	}
 }
