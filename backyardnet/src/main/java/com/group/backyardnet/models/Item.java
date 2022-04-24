@@ -35,7 +35,6 @@ public class Item {
     
   //ZipCode
     @NotEmpty(message="Must include your Zip Code")
-    @Size(min=5, max=9, message="Include only the first five digits of your Zip Code")
     private Integer zipCode;
     
   //Image of Item
