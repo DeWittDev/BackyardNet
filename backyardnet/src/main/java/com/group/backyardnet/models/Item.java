@@ -12,6 +12,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
+
 @Table(name = "item")
 public class Item {
 	@Id
@@ -46,39 +47,46 @@ public class Item {
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getItemName() {
 		return itemName;
 	}
+
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 	public User getUsers() {
 		return users;
 	}
 	public void setUsers(User users) {
 		this.users = users;
 	}
+
 	public Integer getPrice() {
 		return price;
 	}
+
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
+
 	public Integer getZipCode() {
 		return zipCode;
 	}
+
 	public void setZipCode(Integer zipCode) {
 		this.zipCode = zipCode;
 	}
+
 	public String getImgurl() {
 		return imgurl;
 	}
 	public void setImgurl(String imgurl) {
 		this.imgurl = imgurl;
 	}
-	
-    
 }
