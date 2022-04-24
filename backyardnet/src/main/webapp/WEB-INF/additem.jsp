@@ -8,7 +8,7 @@
 <t:jsptag>
 
 <h1>Fill out the details below concerning your item: </h1>
-<form:form action="/item/add" method="post" modelAttribute="item">
+<form:form action="/item/add" method="post" modelAttribute="newItem">
 	<p>
  		<form:errors path="itemName"/>
         <form:label path="itemName">Item for sale:</form:label>
