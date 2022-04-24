@@ -9,7 +9,7 @@
 
 <div class="col">
 			<h1>Login</h1>
-			<form:form action="/login" modelAttribute="newActiveUser">
+			<form:form action="/login" modelAttribute="currentUser">
 				<div class="form-group">
 					<form:label for="email" path="userName">Username:</form:label>
 					<form:input type="text" class="form-control" path="userName" />
