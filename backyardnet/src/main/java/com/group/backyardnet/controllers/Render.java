@@ -90,7 +90,7 @@ public class Render {
 	
 	//------------------------------------- Add Item --------------------------------------------
 	@GetMapping("/item/new")
-	public String addItem(@ModelAttribute("item") Item item) {
+	public String addItem(@ModelAttribute("newItem") Item item) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
@@ -100,7 +100,7 @@ public class Render {
 	@PostMapping("/item/add")
 	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result) {
 		if(result.hasErrors()) {
-    		return "index.jsp";
+    		return "redirect:/item/new";
     	}
 		itemService.addItem(item);
 		return "redirect:/home";

@@ -9,7 +9,7 @@
 
 
 <h1>Update the details below </h1>
-<form:form action="/item/submit/${item.id}" method="put" modelAttribute="newItem">
+<form:form action="/item/submit/${item.id}" method="put" modelAttribute="edit">
 	<p>
  		<form:errors path="itemName"/>
         <form:label path="itemName">Item for sale:</form:label>
@@ -21,19 +21,19 @@
         <form:textarea path="description"/>
     </p>
     <p>
-        <form:label path="condition">Condition</form:label>
-        <form:errors path="condition"/>     
-        <form:textarea path="condition"/>
-    </p> 
-    <p>
         <form:label path="price">Price:</form:label>
         <form:errors path="price"/>     
         <form:textarea path="price"/>
     </p>
     <p>
-        <form:label path="zipcode">Zipcode:</form:label>
-        <form:errors path="zipcode"/>     
-        <form:textarea path="zipcode"/>
+        <form:label path="zipCode">ZipCode:</form:label>
+        <form:errors path="zipCode"/>     
+        <form:textarea path="zipCode"/>
+    </p>
+    <p>
+        <form:label path="imgurl">Image:</form:label>
+        <form:errors path="imgurl"/>     
+        <form:textarea path="imgurl"/>
     </p>
     <form:input type="hidden" value="${currentUser.id}" path="user"/>
     
