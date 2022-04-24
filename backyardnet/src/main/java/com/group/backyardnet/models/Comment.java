@@ -26,7 +26,7 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private User users;
 
     public Long getId() {
         return this.id;
@@ -43,7 +43,6 @@ public class Comment {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
 
     public User getUser() {
         return this.user;
