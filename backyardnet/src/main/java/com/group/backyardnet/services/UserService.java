@@ -69,4 +69,5 @@ public class UserService {
     // update User
     public User updateUser(User updatedUser) {
         return userRepo.save(updatedUser);
+    }
 }
