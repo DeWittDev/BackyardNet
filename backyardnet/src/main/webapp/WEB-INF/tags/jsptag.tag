@@ -27,6 +27,7 @@
 </head>
 <body>
 
+<h1>Welcome to BackyardNet</h1>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="nav justify-content-end">
@@ -46,7 +47,7 @@
 	</nav>
 
 	<h2>
-		Welcome: <c:out value="${currentUser.firstName}" />
+		Welcome: <c:out value="${currentUser.firstName}"/>
 	</h2>
 	
 	<jsp:doBody/> 
