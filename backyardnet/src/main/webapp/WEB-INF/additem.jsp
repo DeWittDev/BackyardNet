@@ -29,6 +29,11 @@
         <form:errors path="ziCcode"/>     
         <form:textarea path="zipCode"/>
     </p>
+    <p>
+        <form:label path="imgurl">Image:</form:label>
+        <form:errors path="imgurl"/>     
+        <form:textarea path="imgurl"/>
+    </p>
     <form:input type="hidden" value="${currentUser.id}" path="user"/>
     
 	<button class="btn btn-primary">List Item</button>
