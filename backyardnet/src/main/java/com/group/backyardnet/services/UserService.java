@@ -16,9 +16,9 @@ public class UserService {
 
     // Validate User for Duplicate email & Password
     public void validate(User newUser, Errors errors) {
-        // EMAIL
-        if (userRepo.findByEmail(newUser.getEmail()) != null) {
-            errors.rejectValue("email", "taken", "This email has already been taken. Please log in!");
+        // userName
+        if (userRepo.findByUserName(newUser.getUserName()) != null) {
+            errors.rejectValue("userName", "taken", "Not a valid username");
         }
 
         // PASSWORD
@@ -47,12 +47,12 @@ public class UserService {
 
     // Authenticate User for Login
     public boolean authenticateUser(LoginUser newLogin, Errors errors) {
-        // Find By Email
-        User user = userRepo.findByEmail(newLogin.getEmail());
+        // Find By Username
+        User user = userRepo.findByUserName(newLogin.getUsername());
 
         // if User is NOT found by email return false
         if (user == null) {
-            errors.rejectValue("email", "notExist", "This email does not exist. Try again or Log In.");
+            errors.rejectValue("userName", "notExist", "This user name does not exist. Try again or Log In.");
             return false;
         }
 
