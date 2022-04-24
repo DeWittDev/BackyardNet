@@ -42,7 +42,7 @@ public class Item {
     private String imgurl;
     
     
-  //User
+	//User
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User users;
@@ -93,5 +93,12 @@ public class Item {
 	}
 	public void setImgurl(String imgurl) {
 		this.imgurl = imgurl;
+	}
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
