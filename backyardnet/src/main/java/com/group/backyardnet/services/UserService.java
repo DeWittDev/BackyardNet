@@ -22,7 +22,7 @@ public class UserService {
         }
 
         // PASSWORD
-        if (!newUser.getPassword().equals(newUser.getConfirmPassword())) {
+        if (!newUser.getPassword().equals(newUser.getConfirm())) {
             errors.rejectValue("confirmPassword", "mismatch", "Passwords did not match. Try Again!!!");
         }
     }
