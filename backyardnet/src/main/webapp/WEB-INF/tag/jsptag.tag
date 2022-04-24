@@ -33,11 +33,11 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">List An
+						aria-current="page" href="/home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/item/new">List An
 							Item</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/user/${currentUser.id}">Profile</a></li>
+					<li class="nav-item"><a class="nav-link" href="/logout">Login Out</a></li>
 					
 					</ul>
 					
@@ -46,7 +46,7 @@
 	</nav>
 
 	<h2>
-		<c:out value="${loggedInUser.name}" />'s Profile
+		<c:out value="${currentUser.firstName}" />'s Profile
 
 	</h2>
 	
