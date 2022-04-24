@@ -119,12 +119,20 @@ public class User {
         this.password = password;
     }
 
-    public String getConfirmPassword() {
+    public String getConfirm() {
         return this.confirm;
     }
 
-    public void setConfirmPassword(String confirm) {
+    public void setConfirm(String confirm) {
         this.confirm = confirm;
+    }
+
+    public List<Comment> getComment() {
+        return this.comment;
+    }
+
+    public void setComment(List<Comment> comment) {
+        this.comment = comment;
     }
 
     public List<Item> getItem() {
