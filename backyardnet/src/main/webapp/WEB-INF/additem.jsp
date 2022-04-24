@@ -26,7 +26,7 @@
     </p>
     <p>
         <form:label path="zipCode">Zipcode:</form:label>
-        <form:errors path="ziCcode"/>     
+        <form:errors path="zipCode"/>     
         <form:textarea path="zipCode"/>
     </p>
     <p>
@@ -34,7 +34,7 @@
         <form:errors path="imgurl"/>     
         <form:textarea path="imgurl"/>
     </p>
-    <form:input type="hidden" value="${currentUser.id}" path="user"/>
+    <form:input type="hidden" value="${currentUser.id}" path="users"/>
     
 	<button class="btn btn-primary">List Item</button>
 </form:form>

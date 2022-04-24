@@ -47,7 +47,7 @@
 	</nav>
 
 	<h2>
-		Welcome: <c:out value="${currentUser.firstName}"/>
+		Welcome: <c:out value="${currentUser.firstName}"/> 
 	</h2>
 	
 	<jsp:doBody/> 
