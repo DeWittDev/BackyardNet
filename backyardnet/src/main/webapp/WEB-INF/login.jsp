@@ -9,7 +9,7 @@
 
 <div class="col">
 			<h1>Login</h1>
-			<form:form action="/login" modelAttribute="currentUser">
+			<form:form action="/login" modelAttribute="newLogin" method="Post"/>
 				<div class="form-group">
 					<form:label for="email" path="userName">Username:</form:label>
 					<form:input type="text" class="form-control" path="userName" />
@@ -21,12 +21,13 @@
 					<form:errors class="text-danger" path="password" />
 				</div>
 				
-				<a  class="btn btn-danger" href="/registration">Seller Registration</a> 
+				<a  class="btn btn-danger" href="/register">Seller Registration</a> 
 				
 				
 				
 				<p></p>
-				<button type="submit" class="btn btn-primary">Login</button>
+				
+				<button type="submit" class="btn btn-primary" >Login</button>
 
 
 			</form:form>
