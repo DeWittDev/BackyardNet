@@ -9,7 +9,7 @@
 
 
 <h1>Update the details below </h1>
-<form:form action="/item/submit/${item.id}" method="put" modelAttribute="item">
+<form:form action="/item/submit/${item.id}" method="put" modelAttribute="edit">
 	<p>
  		<form:errors path="itemName"/>
         <form:label path="itemName">Item for sale:</form:label>
