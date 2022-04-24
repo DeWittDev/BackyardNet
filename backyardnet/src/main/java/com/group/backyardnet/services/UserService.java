@@ -48,7 +48,7 @@ public class UserService {
     // Authenticate User for Login
     public boolean authenticateUser(LoginUser newLogin, Errors errors) {
         // Find By Username
-        User user = userRepo.findByUserName(newLogin.getUsername());
+        User user = userRepo.findByUserName(newLogin.getUserName());
 
         // if User is NOT found by email return false
         if (user == null) {
