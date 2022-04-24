@@ -21,11 +21,6 @@
         <form:textarea path="description"/>
     </p>
     <p>
-        <form:label path="condition">Condition</form:label>
-        <form:errors path="condition"/>     
-        <form:textarea path="condition"/>
-    </p> 
-    <p>
         <form:label path="price">Price:</form:label>
         <form:errors path="price"/>     
         <form:textarea path="price"/>
