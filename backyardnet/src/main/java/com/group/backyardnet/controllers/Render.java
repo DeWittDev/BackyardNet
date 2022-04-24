@@ -143,10 +143,11 @@ public class Render {
 	
 	//------------------------------------- Edit Account ----------------------------------------
 	@GetMapping("/user/edit/{id}")
-	public String editUser(@Valid @PathVariable("id") Long id) {
+	public String editUser(@Valid @PathVariable("id") Long id, Model model) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
+		model.addAttribute("updateUser", userService.findById(id));
 		return "editprofile.jsp";
 	}
 }
