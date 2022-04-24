@@ -39,5 +39,6 @@
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
+	<a href="/delete/${item.id}">Delete</a>
 
 </t:jsptag>   

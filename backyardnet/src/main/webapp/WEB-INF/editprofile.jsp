@@ -47,6 +47,19 @@
 				<form:errors class="text-danger" path="email" />
 				<form:input class="form-control" path="email" />
 			</div>
+			<form:input type="hidden" value="${currentUser.password}" path="password"/>
+				<button type="submit" class="btn btn-primary">Update</button>
+
+		</form:form>
+		<form:form method="post" action="/user/edit/${currentUser.id}"
+			modelAttribute="updateUser">
+			<form:input type="hidden" value="${currentUser.id}" path="id"/>
+			<form:input type="hidden" value="${currentUser.firstName}" path="firstName"/>
+			<form:input type="hidden" value="${currentUser.lastName}" path="lastName"/>
+			<form:input type="hidden" value="${currentUser.city}" path="city"/>
+			<form:input type="hidden" value="${currentUser.state}" path="state"/>
+			<form:input type="hidden" value="${currentUser.userName}" path="userName"/>
+			<form:input type="hidden" value="${currentUser.email}" path="email"/>
 			<div class="form-group">
 				<form:label path="password">Password:</form:label>
 				<form:errors class="text-danger" path="password" />
@@ -62,7 +75,7 @@
 
 		</form:form>
 		
-	<a href="/delete/${item.id}">Delete</a>
+
 	</div>
 
 </t:jsptag>
