@@ -57,10 +57,10 @@ public class User {
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
     private String confirm;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
     private List<Item> item;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY)
     private List<Comment> comment;
 
     public Long getId() {
