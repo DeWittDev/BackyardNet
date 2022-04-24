@@ -55,7 +55,7 @@ public class User {
     @Transient
     @NotEmpty(message = "This field cannot be left empty")
     @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
-    private String confirmPassword;
+    private String confirm;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Item> item;
@@ -120,11 +120,11 @@ public class User {
     }
 
     public String getConfirmPassword() {
-        return this.confirmPassword;
+        return this.confirm;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setConfirmPassword(String confirm) {
+        this.confirm = confirm;
     }
 
     public List<Item> getItem() {
@@ -142,6 +142,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 }
