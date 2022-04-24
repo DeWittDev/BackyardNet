@@ -34,9 +34,6 @@ public class Render {
 	//------------------------------------- Login ------------------------------------------------
 	@GetMapping("/")
 	public String login() {
-		if(session.getAttribute("currentUser") != null) {
-    		return "redirect:/home";
-    	}
 		return "login.jsp";
 	}
 	
