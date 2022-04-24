@@ -21,8 +21,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="items")
 public class Item {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
   //Item Name
@@ -41,7 +41,7 @@ public class Item {
     
   //ZipCode
     @NotEmpty(message="Must include your Zip Code")
-    @Size(min=5, max=5, message="Include only the first five digits of your Zip Code")
+    @Size(min=5, max=9, message="Include only the first five digits of your Zip Code")
     private Integer zipCode;
     
   //Image of Item
@@ -67,8 +67,9 @@ public class Item {
     
   //User
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="userId")
     private User users;
+
     
   //Getters and Setters
 	public Long getId() {
@@ -125,6 +126,6 @@ public class Item {
 	public void setUsers(User users) {
 		this.users = users;
 	}
-    
+	
     
 }
