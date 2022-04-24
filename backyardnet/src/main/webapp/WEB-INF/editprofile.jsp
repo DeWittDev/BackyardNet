@@ -61,6 +61,8 @@
 			<button type="submit" class="btn btn-primary">Update</button>
 
 		</form:form>
+		
+	<a href="/delete/${item.id}">Delete</a>
 	</div>
 
 </t:jsptag>

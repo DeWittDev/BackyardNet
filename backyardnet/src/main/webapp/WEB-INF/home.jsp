@@ -7,7 +7,6 @@
 
 <t:jsptag>
 
-<%-- <h1 class="headline">Welcome <c:out value="${currentUser.userName}"></c:out>!!!!</h1> --%>
 <h3>Available items for sale:</h3>
 <div>
 <table class="table table-success table-striped">
@@ -15,7 +14,6 @@
 				<tr>
 					<th>Item for Sale</th>
 					<th>Description</th>
-					<th>Condition (New/Used)</th>
 					<th>Price ($USD)</th>
 					<th>Seller</th>
 					<th>Zipcode</th>
@@ -27,7 +25,6 @@
 				<tr>
 					<td><a href="/item${items.id}">${items.itemName}</a></td>
 					<td>${items.description}</td>
-					<td>${items.condition} </td>
 					<td>${items.price}</td>
 					<td><a href="/user/${items.users.id}">${items.users.userName}</a></td>
 					<td>${items.zipcode}</td>
