@@ -9,7 +9,7 @@
 
 
 <h1>Update the details below </h1>
-<form:form action="/item/submit/${item.id}" method="put" modelAttribute="edit">
+<form:form action="/item/submit/${item.id}" method="put" modelAttribute="item">
 	<p>
  		<form:errors path="itemName"/>
         <form:label path="itemName">Item for sale:</form:label>
@@ -35,7 +35,7 @@
         <form:errors path="imgurl"/>     
         <form:textarea path="imgurl"/>
     </p>
-    <form:input type="hidden" value="${currentUser.id}" path="user"/>
+    <form:input type="hidden" value="${currentUser.id}" path="users"/>
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
