@@ -1,0 +1,14 @@
+body {
+	margin: 5% 25%;
+	background-color: #406690;
+	color: black;
+	font-size: large;
+}
+
+
+.heading{
+	display: flex;  
+}
+.siteName{
+	font-size:large; 
+}
