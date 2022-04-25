@@ -12,11 +12,10 @@
 <p>Description: <c:out value="${item.description}"></c:out></p>
 <p>Price: <c:out value="${item.price}"></c:out></p>
 <p>Seller: <c:out value="${item.users.userName}"></c:out></p>
-<p>Zipcode: <c:out value="${item.zipCode}"></c:out></p>
+<p>ZipCode: <c:out value="${item.zipCode}"></c:out></p>
 <p>Picture: <c:out value="${item.imgurl}"></c:out></p>
 <c:if test="${item.users.id==currentUser.id}">
-<a>Edit</a>
-<a>Delete</a>
+<a href="/item/edit/${item.id}">Edit</a>
 </c:if>
 
 </t:jsptag>  

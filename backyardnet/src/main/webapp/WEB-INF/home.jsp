@@ -16,19 +16,19 @@
 					<th>Description</th>
 					<th>Price ($USD)</th>
 					<th>Seller</th>
-					<th>Zipcode</th>
+					<th>ZipCode</th>
 					<th>Picture</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${items}" var="items">
+				<c:forEach items="${item}" var="item">
 				<tr>
-					<td><a href="/item${items.id}">${items.itemName}</a></td>
-					<td>${items.description}</td>
-					<td>${items.price}</td>
-					<td><a href="/user/${items.users.id}">${items.users.userName}</a></td>
-					<td>${items.zipcode}</td>
-					<td>${items.image}</td>
+					<td><a href="/item/${item.id}">${item.itemName}</a></td>
+					<td>${item.description}</td>
+					<td>${item.price}</td>
+					<td><a href="/user/${item.users.id}">${item.users.userName}</a></td>
+					<td>${item.zipCode}</td>
+					<td>${item.imgurl}</td>
 				</tr>
 				</c:forEach>	
 			</tbody>

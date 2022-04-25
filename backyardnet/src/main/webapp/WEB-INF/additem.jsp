@@ -25,7 +25,7 @@
         <form:textarea path="price"/>
     </p>
     <p>
-        <form:label path="zipCode">Zipcode:</form:label>
+        <form:label path="zipCode">ZipCode:</form:label>
         <form:errors path="zipCode"/>     
         <form:textarea path="zipCode"/>
     </p>
