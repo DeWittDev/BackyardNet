@@ -1,8 +1,9 @@
 body {
 	margin: 5% 25%;
 	background-color: #406690;
-	color: black;
+	color: white;
 	font-size: large;
+	
 }
 
 
@@ -11,4 +12,7 @@ body {
 }
 .siteName{
 	font-size:large; 
+}
+.editProfile{
+	text-align: center; 
 }

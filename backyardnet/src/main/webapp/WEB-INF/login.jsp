@@ -26,7 +26,7 @@
 
 			<p></p>
 
-			<a class="btn btn-danger" href="/register">Create An Account To Sell You Items</a>
+			<a class="btn btn-warning" href="/register">Create An Account To Sell You Items</a>
 
 
 
