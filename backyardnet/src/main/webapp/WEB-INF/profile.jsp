@@ -7,6 +7,12 @@
 
 <t:jsptag>
  
+ <h2>
+		<p></p>
+		Welcome:
+		<c:out value="${currentUser.firstName}" />
+	</h2>
+ 
 <h1>Profile</h1>	
 
 

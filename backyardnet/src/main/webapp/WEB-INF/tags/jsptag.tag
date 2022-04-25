@@ -45,7 +45,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<!-- <h4>Welcome to BackyardNet</h4> -->
+			
 
 
 			<li class="nav-item"><a class="nav-link active"
@@ -61,11 +61,7 @@
 	</nav>
 
 
-	<h2>
-		<p></p>
-		Welcome:
-		<c:out value="${currentUser.firstName}" />
-	</h2>
+	
 	<p></p>
 	<jsp:doBody />
 

@@ -9,6 +9,7 @@
 
 
 	<div class="row">
+	<div class="col">
 
 
 		<h1>Seller Registration</h1>
@@ -35,6 +36,11 @@
 				<form:errors class="text-danger" path="state" />
 				<form:input class="form-control" path="state" />
 			</div>
+			</div>
+			
+			
+			<div class="col">
+			<h1>Login Information </h1>
 			<div class="form-group">
 				<form:label path="userName">Username:</form:label>
 				<form:errors class="text-danger" path="userName" />
@@ -55,8 +61,11 @@
 				<form:errors class="text-danger" path="confirm" />
 				<form:password class="form-control" path="confirm" />
 			</div>
+			
+			</div>
 			<p></p>
 			<button type="submit" class="btn btn-primary">Register</button>
+	
 
 		</form:form>
 	</div>
