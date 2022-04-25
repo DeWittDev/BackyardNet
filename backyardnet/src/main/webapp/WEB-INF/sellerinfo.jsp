@@ -8,7 +8,12 @@
 <t:jsptag>
 
 
-
+<h2>
+		<p></p>
+		Welcome:
+		<c:out value="${currentUser.firstName}" />
+	</h2>
+	
 
 <div class="container">
   <div class="col1">

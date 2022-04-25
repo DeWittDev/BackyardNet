@@ -1,0 +1,18 @@
+body {
+	margin: 5% 25%;
+	background-color: #406690;
+	color: white;
+	font-size: large;
+	
+}
+
+
+.heading{
+	display: flex;  
+}
+.siteName{
+	font-size:large; 
+}
+.editProfile{
+	text-align: center; 
+}
