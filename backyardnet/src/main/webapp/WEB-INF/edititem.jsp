@@ -30,11 +30,11 @@
         <form:errors path="zipCode"/>     
         <form:textarea path="zipCode"/>
     </p>
-    <p>
+ <%--    <p>
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:textarea path="imgurl"/>
-    </p>
+    </p> --%>
     <form:input type="hidden" value="${currentUser.id}" path="users"/>
     
 	<button class="btn btn-primary">Update Item</button>
