@@ -29,14 +29,19 @@
         <form:errors path="zipCode"/>     
         <form:input path="zipCode"/>
     </p>
-    <p>
+ <%--    <p>
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:input path="imgurl"/>
     </p>
     <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
+
     
 	<button class="btn btn-primary">List Item</button>
 </form:form>
+
+
+ <img src="/img/addItem.jpeg" class="supportImg" alt="Image Not Found">
+
 
 </t:jsptag>   

@@ -21,19 +21,23 @@
 				<form:errors class="text-danger" path="password" />
 			</div>
 
-	<p></p>
+			<p></p>
 			<button type="submit" class="btn btn-primary">Login</button>
 
 			<p></p>
 
+
+		</form:form>
 			<a class="btn btn-warning" href="/register">Create An Account To Sell You Items</a>
 
 
 
 			<p></p>
 
-		</form:form>
 	</div>
+
+
+ <img src="/img/Benefits.jpeg" class="supportImg" alt="Image Not Found">
 
 
 </t:jsptag>

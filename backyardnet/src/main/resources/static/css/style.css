@@ -16,3 +16,12 @@ body {
 .editProfile{
 	text-align: center; 
 }
+.supportImg{
+	width:100%;
+}
+.supportImgProfile{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

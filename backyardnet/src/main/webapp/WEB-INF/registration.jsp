@@ -70,6 +70,10 @@
  
 				
 	</form:form>
+	
+	
+ <img src="/img/registerAccount.png" class="supportImg" alt="Image Not Found">
+	
 
 </t:jsptag>
 

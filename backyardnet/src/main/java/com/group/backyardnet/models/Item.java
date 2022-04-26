@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -26,8 +26,8 @@ public class Item {
     private String itemName;
     
   //Price
-    @NotBlank(message="The item needs a price to be sold")
-    private Long price;
+    @NotNull(message="The item needs a price to be sold")
+    private Integer price;
     
   //Description
     @NotEmpty(message="Need a description onf the item")
@@ -35,10 +35,11 @@ public class Item {
     private String description;
     
   //ZipCode
+    @NotNull(message="Needs Zip Code")
     private Integer zipCode;
     
   //Image of Item
-    private String imgurl;
+    //private String imgurl;
     
     
 	//User
@@ -71,16 +72,6 @@ public class Item {
 		this.users = users;
 	}
 
-	
-
-	public Long getPrice() {
-		return price;
-	}
-
-	public void setPrice(Long price) {
-		this.price = price;
-	}
-
 	public Integer getZipCode() {
 		return zipCode;
 	}
@@ -89,12 +80,12 @@ public class Item {
 		this.zipCode = zipCode;
 	}
 
-	public String getImgurl() {
-		return imgurl;
-	}
-	public void setImgurl(String imgurl) {
-		this.imgurl = imgurl;
-	}
+	//public String getImgurl() {
+	//	return imgurl;
+	//}
+	//public void setImgurl(String imgurl) {
+	//	this.imgurl = imgurl;
+	//}
 	public String getDescription() {
 		return description;
 	}
@@ -102,4 +93,13 @@ public class Item {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	
 }

@@ -30,15 +30,23 @@
         <form:errors path="zipCode"/>     
         <form:textarea path="zipCode"/>
     </p>
-    <p>
+ <%--    <p>
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:textarea path="imgurl"/>
+
     </p>
     <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
+
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
 	<a href="/delete/${item.id}">Delete</a>
+	
+	
+	
+ <img src="/img/editItem.jpeg" class="supportImg" alt="Image Not Found">
+	
+	
 
 </t:jsptag>   

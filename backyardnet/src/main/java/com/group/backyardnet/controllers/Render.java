@@ -44,12 +44,12 @@ public class Render {
 	public String loginSubmit(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, @ModelAttribute("newUser") User user) {
     	userService.authenticateUser(newLogin, result);
     	if(result.hasErrors()) {
-    		return "redirect:/login";
+    		return "login.jsp";
     	}
     	User currentUser = userService.findByUserName(newLogin.getUserName());
     	
     	session.setAttribute("currentUser", currentUser);
-    	return "home.jsp";
+    	return "redirect:/home";
     }
 	
 	@GetMapping("/logout")
@@ -71,7 +71,7 @@ public class Render {
     public String registerSubmit(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser newLogin) {
 		userService.validate(user, result);
     	if(result.hasErrors()) {
-    		return "redirect:/";
+    		return "redirect:/registration";
     	}
 		userService.registerUser(user);
 		session.setAttribute("currentUser", user);
@@ -90,7 +90,7 @@ public class Render {
 	
 	//------------------------------------- Add Item --------------------------------------------
 	@GetMapping("/item/new")
-	public String addItem(@ModelAttribute("newItem") Item item) {
+	public String addItem(@ModelAttribute("newItem") Item item, HttpSession session) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
@@ -99,8 +99,9 @@ public class Render {
 	
 	@PostMapping("/item/add")
 	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result, User user) {
+
 		if(result.hasErrors()) {
-    		return "redirect:/item/new";
+    		return "additem.jsp";
     	}
 		user = (User)session.getAttribute("currentUser");
 		itemService.addItem(item);
@@ -114,7 +115,7 @@ public class Render {
     		return "redirect:/";
     	}
 		model.addAttribute("item", itemService.findById(id));
-		return "showItem.jsp";
+		return "showitem.jsp";
 	}
 	
 	//------------------------------------- Edit Item -------------------------------------------

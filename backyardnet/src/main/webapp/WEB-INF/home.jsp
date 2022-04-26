@@ -17,7 +17,7 @@
 					<th>Price ($USD)</th>
 					<th>Seller</th>
 					<th>ZipCode</th>
-					<th>Picture</th>
+					<%-- <th>Picture</th> --%>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,12 +28,20 @@
 					<td>${item.price}</td>
 					<td><a href="/user/${item.users.id}">${item.users.userName}</a></td>
 					<td>${item.zipCode}</td>
-					<td>${item.imgurl}</td>
+					<%-- <td>${item.imgurl}</td> --%>
 				</tr>
 				</c:forEach>	
 			</tbody>
 	</table>
 </div>
+
+<p></p>
+
 <a href="/item/new">Add an item</a>
+<p></p>
+
+	
+ <img src="/img/homeGarage.jpeg" class="supportImg" alt="Image Not Found">
+
 
 </t:jsptag>   
