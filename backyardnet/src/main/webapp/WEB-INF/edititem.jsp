@@ -40,5 +40,11 @@
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
 	<a href="/delete/${item.id}">Delete</a>
+	
+	
+	
+ <img src="/img/editItem.jpeg" class="supportImg" alt="Image Not Found">
+	
+	
 
 </t:jsptag>   

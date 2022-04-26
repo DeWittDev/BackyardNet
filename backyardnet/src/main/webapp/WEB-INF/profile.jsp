@@ -7,6 +7,10 @@
 
 <t:jsptag>
 
+
+ <img src="/img/Profile.jpeg" class="supportImgProfile" alt="Image Not Found">
+
+
 	<h2>
 		<p></p>
 		Welcome:

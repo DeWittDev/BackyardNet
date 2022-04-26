@@ -34,6 +34,14 @@
 			</tbody>
 	</table>
 </div>
+
+<p></p>
+
 <a href="/item/new">Add an item</a>
+<p></p>
+
+	
+ <img src="/img/homeGarage.jpeg" class="supportImg" alt="Image Not Found">
+
 
 </t:jsptag>   
