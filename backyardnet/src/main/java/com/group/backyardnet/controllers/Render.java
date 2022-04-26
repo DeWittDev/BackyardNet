@@ -98,7 +98,7 @@ public class Render {
 	}
 	
 	@PostMapping("/item/add")
-	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result, HttpSession session) {
+	public String addSubmit(@Valid @ModelAttribute("item") Item item, BindingResult result, HttpSession session) {
 		if(result.hasErrors()) {
     		return "additem.jsp";
     	}
