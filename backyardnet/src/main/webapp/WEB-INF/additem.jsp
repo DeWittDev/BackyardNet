@@ -15,7 +15,7 @@
         <form:input path="itemName"/>
     </p>
     <p>
-        <form:label path="description">Description</form:label>
+        <form:label path="description">Description:</form:label>
         <form:errors path="description"/>
         <form:textarea path="description"/>
     </p>
@@ -34,7 +34,7 @@
         <form:errors path="imgurl"/>     
         <form:input path="imgurl"/>
     </p>
-    <form:input type="hidden" value="${currentUser.id}" path="users"/>
+    <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
     
 	<button class="btn btn-primary">List Item</button>
 </form:form>
