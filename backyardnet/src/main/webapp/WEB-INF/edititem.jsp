@@ -36,6 +36,7 @@
         <form:textarea path="imgurl"/>
 
     </p>
+    --%>
     <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
 
     
