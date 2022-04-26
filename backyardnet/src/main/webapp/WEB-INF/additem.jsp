@@ -39,4 +39,8 @@
 	<button class="btn btn-primary">List Item</button>
 </form:form>
 
+
+ <img src="/img/addItem.jpeg" class="supportImg" alt="Image Not Found">
+
+
 </t:jsptag>   
