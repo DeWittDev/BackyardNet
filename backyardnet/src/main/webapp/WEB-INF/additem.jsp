@@ -8,7 +8,6 @@
 <t:jsptag>
 
 <h1>Fill out the details below concerning your item: </h1>
-<h2>${currentUser.id}</h2>
 <form:form action="/item/add" method="post" modelAttribute="newItem">
 	<p>
  		<form:errors path="itemName"/>
