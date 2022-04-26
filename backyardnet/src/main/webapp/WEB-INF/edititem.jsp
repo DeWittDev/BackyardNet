@@ -34,8 +34,10 @@
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:textarea path="imgurl"/>
-    </p> --%>
-    <form:input type="hidden" value="${currentUser.id}" path="users"/>
+
+    </p>
+    <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
+
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>

@@ -98,10 +98,12 @@ public class Render {
 	}
 	
 	@PostMapping("/item/add")
-	public String addSubmit(@Valid @ModelAttribute("item") Item item, BindingResult result, HttpSession session) {
+	public String addSubmit(@Valid @ModelAttribute("newItem") Item item, BindingResult result, User user) {
+
 		if(result.hasErrors()) {
     		return "additem.jsp";
     	}
+		user = (User)session.getAttribute("currentUser");
 		itemService.addItem(item);
 		return "redirect:/home";
 	}
@@ -127,10 +129,11 @@ public class Render {
 	}
 	
 	@PutMapping("/item/submit/{id}")
-	public String itemEdit(@Valid @ModelAttribute("edit") Item item, @PathVariable("id") Long id, BindingResult result) {
+	public String itemEdit(@Valid @ModelAttribute("edit") Item item, @PathVariable("id") Long id, BindingResult result, User user) {
 		if(result.hasErrors()) {
     		return "redirect:/";
     	}
+		user = (User)session.getAttribute("currentUser");
 		itemService.edit(item);
 		return "redirect:/home";
 	}
