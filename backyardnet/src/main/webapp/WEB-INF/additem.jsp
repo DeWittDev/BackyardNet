@@ -22,17 +22,17 @@
     <p>
         <form:label path="price">Price:</form:label>
         <form:errors path="price"/>     
-        <form:textarea path="price"/>
+        <form:input path="price"/>
     </p>
     <p>
         <form:label path="zipCode">ZipCode:</form:label>
         <form:errors path="zipCode"/>     
-        <form:textarea path="zipCode"/>
+        <form:input path="zipCode"/>
     </p>
     <p>
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
-        <form:textarea path="imgurl"/>
+        <form:input path="imgurl"/>
     </p>
     <form:input type="hidden" value="${currentUser.id}" path="users"/>
     
