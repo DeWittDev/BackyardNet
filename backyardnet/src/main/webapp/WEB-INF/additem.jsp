@@ -8,6 +8,7 @@
 <t:jsptag>
 
 <h1>Fill out the details below concerning your item: </h1>
+<h2>${currentUser.id}</h2>
 <form:form action="/item/add" method="post" modelAttribute="newItem">
 	<p>
  		<form:errors path="itemName"/>
@@ -34,7 +35,7 @@
         <form:errors path="imgurl"/>     
         <form:input path="imgurl"/>
     </p> --%>
-    <form:input type="hidden" value="${currentUser.id}" path="users"/>
+    <form:hidden path="users" value="${currentUser.id}" />
     
 	<button class="btn btn-primary">List Item</button>
 </form:form>
