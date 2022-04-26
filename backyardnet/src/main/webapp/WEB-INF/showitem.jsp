@@ -13,7 +13,7 @@
 <p>Price: <c:out value="${item.price}"></c:out></p>
 <p>Seller: <c:out value="${item.users.userName}"></c:out></p>
 <p>ZipCode: <c:out value="${item.zipCode}"></c:out></p>
-<p>Picture: <c:out value="${item.imgurl}"></c:out></p>
+<%-- <p>Picture: <c:out value="${item.imgurl}"></c:out></p> --%>
 <c:if test="${item.users.id==currentUser.id}">
 <a href="/item/edit/${item.id}">Edit</a>
 </c:if>

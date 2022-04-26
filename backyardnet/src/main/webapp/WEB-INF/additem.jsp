@@ -29,11 +29,11 @@
         <form:errors path="zipCode"/>     
         <form:input path="zipCode"/>
     </p>
-    <p>
+ <%--    <p>
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:input path="imgurl"/>
-    </p>
+    </p> --%>
     <form:input type="hidden" value="${currentUser.id}" path="users"/>
     
 	<button class="btn btn-primary">List Item</button>
