@@ -33,7 +33,7 @@
         <form:label path="imgurl">Image:</form:label>
         <form:errors path="imgurl"/>     
         <form:input path="imgurl"/>
-    </p>
+ --%>
     <form:input type="hidden" value="${currentUser.id}" path="users.id"/>
 
     
