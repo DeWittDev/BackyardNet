@@ -151,13 +151,23 @@ public class Render {
 	
 	//------------------------------------- Account Page ----------------------------------------
 	@GetMapping("/user/{id}")
-	public String Account(@PathVariable("id") Long id, Model model) {
+	public String account(@PathVariable("id") Long id, Model model) {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
 		model.addAttribute("item", itemService.findAll());
 		model.addAttribute("user", userService.findById(id));
 		return "profile.jsp";
+	}
+	
+	@GetMapping("/seller/{id}")
+	public String seller(@PathVariable("id") Long id, Model model) {
+		if(session.getAttribute("currentUser") == null) {
+    		return "redirect:/";
+    	}
+		model.addAttribute("item", itemService.findAll());
+		model.addAttribute("user", userService.findById(id));
+		return "sellerinfo.jsp";
 	}
 	
 	//------------------------------------- Edit Account ----------------------------------------
