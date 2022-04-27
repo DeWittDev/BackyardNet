@@ -11,13 +11,9 @@
  <img src="/img/Profile.jpeg" class="supportImgProfile" alt="Image Not Found">
 
 
-	<h2>
-		<p></p>
-		Welcome:
-		<c:out value="${user.firstName}" />
-	</h2>
+	
 
-	<h2>Profile</h2>
+	<h2>User Profile</h2>
 
 
 	<div class="row">
@@ -90,7 +86,7 @@
 					<td>${item.itemName}</td>
 					<td>${item.description}</td>
 					<c:if test="${currentUser.id == item.users.id}">
-						<td class="linkcolor"><a href="/item/edit/${item.id}">Edit</a></td>
+						<td class="linkcolor"><a class="btn btn-secondary" href="/item/edit/${item.id}">Edit</a></td>
 						<!-- need to add in the path to edit -->
 					</c:if>
 				</tr>
