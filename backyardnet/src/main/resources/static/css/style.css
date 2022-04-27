@@ -25,3 +25,7 @@ body {
   margin-right: auto;
   width: 50%;
 }
+.delete{
+	font-size:30px;
+	color: black;
+}

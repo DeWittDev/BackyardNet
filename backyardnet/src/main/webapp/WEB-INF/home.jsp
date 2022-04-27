@@ -26,7 +26,7 @@
 					<td><a href="/item/${item.id}">${item.itemName}</a></td>
 					<td>${item.description}</td>
 					<td>${item.price}</td>
-					<td><a href="/user/${item.users.id}">${item.users.userName}</a></td>
+					<td><a href="/seller/${item.users.id}">${item.users.userName}</a></td>
 					<td>${item.zipCode}</td>
 					<%-- <td>${item.imgurl}</td> --%>
 				</tr>
