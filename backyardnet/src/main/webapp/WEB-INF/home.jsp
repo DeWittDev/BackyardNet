@@ -37,7 +37,7 @@
 
 <p></p>
 
-<a href="/item/new">Add an item</a>
+<a class="btn btn-primary" href="/item/new">Add an item</a>
 <p></p>
 
 	
