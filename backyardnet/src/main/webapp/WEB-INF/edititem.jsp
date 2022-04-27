@@ -42,7 +42,11 @@
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
-	<a href="/delete/item/${item.id}" class="delete">Delete</a>
+	<%-- <a href="/delete/item/${item.id}" class="delete">Delete</a> --%>
+	
+	<form:form action="/delete/item/${id}" method="DELETE" >
+                    <button>Delete Item </button>
+                </form:form>
 	
 	
 	

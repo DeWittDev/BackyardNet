@@ -18,4 +18,13 @@
 <a href="/item/edit/${item.id}">Edit</a>
 </c:if>
 
+ 
+  <a class="btn btn-primary" href="mailto:SellerName@aol.com" >Email Seller </a> <!--  Phong to figure out how to launch email client repopulate with seller dummy email later -->
+
+
+<!-- <a href="mailto:name@abc.com?subject=The%20subject&amp;body=This%20is%20a%20message%20body">
+Send mail</a>
+
+ -->
+
 </t:jsptag>  
