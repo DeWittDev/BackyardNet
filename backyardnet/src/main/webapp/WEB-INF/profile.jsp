@@ -82,16 +82,13 @@
 			</tr>
 		</thead>
 		<tbody>
-	
 			<c:forEach items="${item}" var="item">
-				<c:if test="${currentUser.id==item.users.id}"> 
+				<c:if test="${currentUser.id == item.users.id}">
 				<tr>
-
 					<td>${item.itemName}</td>
 					<td>${item.description}</td>
 					<td class="linkcolor"><a href="/item/edit/${item.id}">Edit</a></td>
 					<!-- need to add in the path to edit -->
-
 				</tr>
 				</c:if>
 			</c:forEach>
