@@ -14,7 +14,7 @@
 	<h2>
 		<p></p>
 		Welcome:
-		<c:out value="${currentUser.firstName}" />
+		<c:out value="${user.firstName}" />
 	</h2>
 
 	<h2>Profile</h2>
@@ -23,29 +23,29 @@
 	<div class="row">
 		<div class="col">
 			<p></p>
-			<h3>First Name: ${currentUser.firstName}</h3>
+			<h3>First Name: ${user.firstName}</h3>
 			<p></p>
 			<!-- Force next columns to break to new line -->
 			<div class="w-100"></div>
 			<p></p>
-			<h3>Last Name: ${currentUser.lastName}</h3>
+			<h3>Last Name: ${user.lastName}</h3>
 			<p></p>
 			<p></p>
-			<h3>City: ${currentUser.city}</h3>
+			<h3>City: ${user.city}</h3>
 			<p></p>
 			<p></p>
-			<h3>State: ${currentUser.state}</h3>
+			<h3>State: ${user.state}</h3>
 			<p></p>
 			<p></p>
 		</div>
 
 		<div class="col">
 			<p></p>
-			<h3>Username: ${currentUser.userName}</h3>
+			<h3>Username: ${user.userName}</h3>
 			<p></p>
 			
 			<p></p>
-			<h3>Email: ${currentUser.email}</h3>
+			<h3>Email: ${user.email}</h3>
 			<p></p>
 			
 			<!-- Force next columns to break to new line -->
@@ -62,9 +62,11 @@
 	</div>
 	<p></p>
 <div class=editProfile>
-	<a class="btn btn-primary" href="/user/edit/${currentUser.id}">Edit
+	<c:if test="${currentUser.id == user.id}">
+	<a class="btn btn-primary" href="/user/edit/${user.id}">Edit
 		Profile</a>
 	<p></p>
+	</c:if>
 
 </div>
 
@@ -83,12 +85,14 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${item}" var="item">
-				<c:if test="${currentUser.id == item.users.id}">
+				<c:if test="${user.id == item.users.id}">
 				<tr>
 					<td>${item.itemName}</td>
 					<td>${item.description}</td>
-					<td class="linkcolor"><a href="/item/edit/${item.id}">Edit</a></td>
-					<!-- need to add in the path to edit -->
+					<c:if test="${currentUser.id == item.users.id}">
+						<td class="linkcolor"><a href="/item/edit/${item.id}">Edit</a></td>
+						<!-- need to add in the path to edit -->
+					</c:if>
 				</tr>
 				</c:if>
 			</c:forEach>
