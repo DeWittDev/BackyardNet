@@ -152,6 +152,10 @@ public class Render {
 	//------------------------------------- Account Page ----------------------------------------
 	@GetMapping("/user/{id}")
 	public String Account(@PathVariable("id") Long id, Model model) {
+		if(session.getAttribute("currentUser") == null) {
+    		return "redirect:/";
+    	}
+		model.addAttribute("item", itemService.findAll());
 		return "profile.jsp";
 	}
 	
