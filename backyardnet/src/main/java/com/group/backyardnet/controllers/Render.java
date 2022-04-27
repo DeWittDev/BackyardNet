@@ -140,7 +140,7 @@ public class Render {
 	
 	//------------------------------------- Account Page ----------------------------------------
 	@GetMapping("/user/{id}")
-	public String Account(@PathVariable("id") Long id) {
+	public String Account(@PathVariable("id") Long id, Model model) {
 		return "profile.jsp";
 	}
 	
