@@ -158,8 +158,9 @@ public class Render {
 		model.addAttribute("item", itemService.findAll());
 		model.addAttribute("user", userService.findById(id));
 		return "profile.jsp";
+		 
 	}
-	
+
 	@GetMapping("/seller/{id}")
 	public String seller(@PathVariable("id") Long id, Model model) {
 		if(session.getAttribute("currentUser") == null) {
@@ -169,7 +170,7 @@ public class Render {
 		model.addAttribute("user", userService.findById(id));
 		return "sellerinfo.jsp";
 	}
-	
+
 	//------------------------------------- Edit Account ----------------------------------------
 	@GetMapping("/user/edit/{id}")
 	public String editUser(@PathVariable("id") Long id, Model model) {
