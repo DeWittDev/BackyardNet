@@ -156,6 +156,7 @@ public class Render {
     		return "redirect:/";
     	}
 		model.addAttribute("item", itemService.findAll());
+		model.addAttribute("user", userService.findById(id));
 		return "profile.jsp";
 		 
 	}
@@ -172,7 +173,7 @@ public class Render {
 		if(session.getAttribute("currentUser") == null) {
     		return "redirect:/";
     	}
-		model.addAttribute("updateUser", userService.findById(id));
+		model.addAttribute("user", userService.findById(id));
 		return "editprofile.jsp";
 	}
 	

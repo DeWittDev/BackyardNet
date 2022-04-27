@@ -11,11 +11,11 @@
 	<div class="row">
 
 
-		<h1>Update Information: <c:out value="${currentUser.firstName}"></c:out></h1>
+		<h1>Update Information: <c:out value="${user.firstName}"></c:out></h1>
 		
-		<form:form method="Put" action="/user/edit/${currentUser.id}"
-			modelAttribute="updateUser">
-			<form:input type="hidden" value="${currentUser.id}" path="id"/>
+		<form:form method="Put" action="/user/edit/${user.id}"
+			modelAttribute="user">
+			<form:input type="hidden" value="${user.id}" path="id"/>
 
 			<div class="form-group">
 				<form:label path="firstName">First Name:</form:label>
@@ -47,19 +47,19 @@
 				<form:errors class="text-danger" path="email" />
 				<form:input class="form-control" path="email" />
 			</div>
-			<form:input type="hidden" value="${currentUser.password}" path="password"/>
+			<form:input type="hidden" value="${user.password}" path="password"/>
 				<button type="submit" class="btn btn-primary">Update</button>
 
 		</form:form>
-		<form:form method="post" action="/user/edit/${currentUser.id}"
-			modelAttribute="updateUser">
-			<form:input type="hidden" value="${currentUser.id}" path="id"/>
-			<form:input type="hidden" value="${currentUser.firstName}" path="firstName"/>
-			<form:input type="hidden" value="${currentUser.lastName}" path="lastName"/>
-			<form:input type="hidden" value="${currentUser.city}" path="city"/>
-			<form:input type="hidden" value="${currentUser.state}" path="state"/>
-			<form:input type="hidden" value="${currentUser.userName}" path="userName"/>
-			<form:input type="hidden" value="${currentUser.email}" path="email"/>
+		<form:form method="post" action="/user/edit/${user.id}"
+			modelAttribute="user">
+			<form:input type="hidden" value="${user.id}" path="id"/>
+			<form:input type="hidden" value="${user.firstName}" path="firstName"/>
+			<form:input type="hidden" value="${user.lastName}" path="lastName"/>
+			<form:input type="hidden" value="${user.city}" path="city"/>
+			<form:input type="hidden" value="${user.state}" path="state"/>
+			<form:input type="hidden" value="${user.userName}" path="userName"/>
+			<form:input type="hidden" value="${user.email}" path="email"/>
 			<div class="form-group">
 				<form:label path="password">Password:</form:label>
 				<form:errors class="text-danger" path="password" />
