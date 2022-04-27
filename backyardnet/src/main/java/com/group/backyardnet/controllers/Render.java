@@ -72,7 +72,7 @@ public class Render {
     public String registerSubmit(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser newLogin) {
 		userService.validate(user, result);
     	if(result.hasErrors()) {
-    		return "redirect:/registration";
+    		return "registration.jsp";
     	}
 		userService.registerUser(user);
 		session.setAttribute("currentUser", user);
