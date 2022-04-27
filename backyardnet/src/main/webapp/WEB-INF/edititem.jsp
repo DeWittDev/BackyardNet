@@ -42,7 +42,7 @@
     
 	<button class="btn btn-primary">Update Item</button>
 </form:form>
-	<a href="/delete/${item.id}">Delete</a>
+	<a href="/delete/item/${item.id}" class="delete">Delete</a>
 	
 	
 	
